@@ -2,32 +2,32 @@ FROM php:8.3-fpm
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
-    git unzip libzip-dev libpng-dev libicu-dev libonig-dev libxml2-dev curl \
+    git unzip libzip-dev libpng-dev libicu-dev libonig-dev libxml2-dev curl pkg-config libssl-dev \
     && docker-php-ext-install zip intl \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install PHP MongoDB extension
+# Install PHP MongoDB extension (with SSL enabled)
 RUN pecl install mongodb \
     && docker-php-ext-enable mongodb
 
-# Composer
+# Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Node.js & npm
+# Install Node.js & npm
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y nodejs
 
-# Working directory
+# Set working directory
 WORKDIR /var/www/html
 
-# Safe directory for git
+# Configure Git safe directory
 RUN git config --global --add safe.directory /var/www/html
 
-# Install Laravel if not already present
-RUN if [ ! -f composer.json ]; then composer create-project laravel/laravel . ; fi
+# Copy Laravel project files
+COPY . .
 
-# Install PHP dependencies (including MongoDB package)
-RUN composer install \
+# Install Laravel dependencies
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader \
     && composer require jenssegers/mongodb
 
 # Install Breeze & frontend scaffolding
@@ -41,11 +41,11 @@ RUN npm install --legacy-peer-deps \
 # Generate Laravel app key
 RUN php artisan key:generate
 
-# Permissions
+# Set permissions
 RUN chown -R www-data:www-data /var/www/html
 
-# Expose port
+# Expose Laravel dev server port
 EXPOSE 8000
 
-# Start Laravel dev server
+# Start Laravel
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
