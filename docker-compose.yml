@@ -8,6 +8,7 @@ services:
         container_name: simple-task-manager
         ports:
             - "8003:8000"
+            - "5173:5173"   # Vite HMR
         volumes:
             - .:/var/www/html
             - vite-build:/var/www/html/public/build
