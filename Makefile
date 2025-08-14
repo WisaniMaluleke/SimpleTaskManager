@@ -1,7 +1,7 @@
 build:
 	docker-compose build
 run:
-	rm -rf node_modules/.vite && docker-compose up --remove-orphans -d && npm run dev
+	docker-compose up --remove-orphans -d
 
 down:
 	docker-compose down
@@ -19,7 +19,7 @@ clear:
 	php artisan optimize:clear
 
 permissions:
-	chmod 777 ~/development/learning/wis-warehouse && sudo chown wislim:wislim ~/development/learning/wis-warehouse
+	chmod 777 ~/development/learning/SimpleTaskManager && sudo chown wislim:wislim ~/development/learning/SimpleTaskManager
 storagelink:
 	docker exec crawler bash -c "php artisan storage:link"
 storagePermission:

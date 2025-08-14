@@ -41,8 +41,11 @@ RUN npm install --legacy-peer-deps \
 # Generate Laravel app key
 RUN php artisan key:generate
 
+# Drop sessions index if exists (ignore error if not present)
+RUN php artisan db:drop-sessions-index || true
+
 # Set permissions
-RUN chown -R www-data:www-data /var/www/html
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Expose Laravel dev server port
 EXPOSE 8000

@@ -5,7 +5,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-        container_name: laravel-app
+        container_name: simple-task-manager
         ports:
             - "8003:8000"
         volumes:
