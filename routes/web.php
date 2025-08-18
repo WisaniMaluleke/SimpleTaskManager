@@ -16,6 +16,10 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
+    return Inertia::render('Task');
+})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/launch-task', function () {
+    return Inertia::render('Task');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
