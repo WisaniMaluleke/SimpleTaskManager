@@ -424,3 +424,37 @@ body {
 .task-list-container::-webkit-scrollbar-thumb:hover {
     background: #ccc;
 }
+
+/* extracted styles/classes */
+.page-bg {
+  @apply bg-gray-300;
+}
+
+/* === Wis-Geeks Brand Colors === */
+.bg-wis-green   { background-color: #48183a; }
+.bg-wis-teal    { background-color: #0095A6; }
+.bg-wis-yellow  { background-color: #F7B52C; }
+.bg-wis-orange  { background-color: #F08532; }
+.bg-wis-purple  { background-color: #4A015E; }
+.bg-wis-pink    { background-color: #E00484; }
+.bg-wis-neutral { background-color: #E5E5E8; }
+
+/* Text colors */
+.text-wis-green   { color: #347c3e; }
+.text-wis-teal    { color: #0095A6; }
+.text-wis-yellow  { color: #bd8514; }
+.text-wis-orange  { color: #F08532; }
+.text-wis-purple  { color: #4A015E; }
+.text-wis-pink    { color: #E00484; }
+.text-wis-neutral { color: #E5E5E8; }
+
+/* Border colors */
+.border-wis-green   { border-color: #48A854; }
+.border-wis-teal    { border-color: #0095A6; }
+.border-wis-yellow  { border-color: #F7B52C; }
+.border-wis-orange  { border-color: #F08532; }
+.border-wis-purple  { border-color: #4A015E; }
+.border-wis-pink    { border-color: #E00484; }
+.border-wis-neutral { border-color: #E5E5E8; }
+
+
