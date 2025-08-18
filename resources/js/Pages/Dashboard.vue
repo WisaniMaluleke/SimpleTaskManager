@@ -21,7 +21,7 @@ const tasks = [
 
                 <div class="flex items-center justify-between py-4 text-gray-500 shadow-md px-9">
                     <h2 class="text-2xl font-bold tracking-wide">
-                        Task Manager Dashboard
+                        Dashboard
                     </h2>
                 </div>
 
