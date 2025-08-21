@@ -269,3 +269,21 @@ export const DialogFooter = defineComponent({
       h("div", { class: "mt-4 flex justify-end gap-2" }, slots.default?.())
   },
 })
+
+// ---------------------
+// SelectContent Component
+// ---------------------
+export const SelectContent = defineComponent({
+  name: "SelectContent",
+  setup(_, { slots }) {
+    return () =>
+      h(
+        "div",
+        {
+          class:
+            "absolute z-50 mt-1 w-full bg-white border border-gray-300 rounded shadow-lg",
+        },
+        slots.default?.()
+      )
+  },
+})
