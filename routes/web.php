@@ -16,11 +16,11 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
-    return Inertia::render('Task');
 })->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/launch-task', function () {
+
+Route::get('/task', function () {
     return Inertia::render('Task');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('task');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -30,7 +30,7 @@
 
       <!-- Auth Buttons -->
       <div class="auth-buttons">
-        <Link href="/launch-task" class="btn btn-primary">Register</Link>
+        <Link href="/register" class="btn btn-primary">Register</Link>
         <Link href="/login" class="btn btn-accent">Login</Link>
       </div>
     </section>
