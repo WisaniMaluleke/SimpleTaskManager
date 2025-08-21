@@ -99,7 +99,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #facc15 100%);
+    @apply main-background;
     min-height: 100vh;
     color: white;
     user-select: none;
@@ -514,7 +514,7 @@ body {
 }
 
 .main-background {
-    background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #facc15 100%);
+    background: linear-gradient(135deg, #67244a 0%, #932F67 50%, #cb4b94 150%);
 }
 
 .landing-page {
@@ -523,7 +523,7 @@ body {
     justify-content: space-between;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #facc15 100%);
+    background: linear-gradient(35deg, #932F67 80%, #95ba0e 10%);
     color: white;
     overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
