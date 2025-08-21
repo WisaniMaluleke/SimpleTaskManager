@@ -36,13 +36,7 @@ const handleFilterClick = (filterId: string) => {
 </script>
 
 <template>
-    <Sidebar :class="isCollapsed ? 'w-14' : 'w-40'" collapsible="icon">
-        <div class="p-4">
-            <!-- Circle Logo -->
-            <div class="logo-container">
-                <img :src="logo" alt="Logo" class="logo-image">
-            </div>
-        </div>
+    <Sidebar :class="isCollapsed ? 'w-10' : 'w-40'" collapsible="icon">
         <SidebarContent class="bg-gradient-header">
             <!-- Filters Group -->
             <SidebarGroup>
