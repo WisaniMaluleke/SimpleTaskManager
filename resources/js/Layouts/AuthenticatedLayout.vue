@@ -71,16 +71,24 @@ const setFilter = (newFilter: string) => {
                             </Dropdown>
                         </div>
 
-                        <!-- Mobile Hamburger -->
-                        <div class="sm:hidden">
-                            <button @click="toggleSidebar"
+                        <!-- Burger button in navbar -->
+                        <div class="sm:hidden" v-if="!sidebarOpen">
+                            <button @click="sidebarOpen = true"
                                 class="p-2 text-white rounded hover:bg-white/20 focus:outline-none">
                                 <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                    <path :class="{ hidden: sidebarOpen, 'inline-flex': !sidebarOpen }"
-                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M4 6h16M4 12h16M4 18h16" />
-                                    <path :class="{ hidden: !sidebarOpen, 'inline-flex': sidebarOpen }"
-                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Close button floating above overlay -->
+                        <div v-if="sidebarOpen" class="fixed top-4 right-4 z-[9999] sm:hidden">
+                            <button @click="sidebarOpen = false"
+                                class="p-2 text-white rounded main-background hover:bg-white/20 focus:outline-none">
+                                <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                    <!-- Close icon -->
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
