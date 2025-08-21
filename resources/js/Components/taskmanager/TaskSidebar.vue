@@ -58,7 +58,7 @@ const handleFilterClick = (filterId: string) => {
 
             <!-- Actions Group -->
             <SidebarGroup>
-                <SidebarGroupLabel class="font-medium text-white/80">
+                <SidebarGroupLabel class="ml-4 font-medium text-white/80">
                     <span v-if="!isCollapsed">Actions</span>
                 </SidebarGroupLabel>
                 <SidebarGroupContent>
