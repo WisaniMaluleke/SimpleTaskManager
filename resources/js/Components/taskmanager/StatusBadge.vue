@@ -32,13 +32,13 @@ const statusConfig = {
     label: "In Progress",
     icon: PlayCircle,
     className:
-      "bg-primary/20 text-primary border border-primary/30 hover:bg-primary/30",
+      "bg-brand-inprogress/20 text-brand-inprogress border border-brand-inprogress/30 hover:bg-brand-inprogress/30",
   },
   completed: {
     label: "Completed",
     icon: CheckCircle,
     className:
-      "bg-success/20 text-success border border-success/30 hover:bg-success/30",
+      "bg-brand-success/20 text-brand-success border border-success/30 hover:bg-brand-success/30",
   },
 };
 
