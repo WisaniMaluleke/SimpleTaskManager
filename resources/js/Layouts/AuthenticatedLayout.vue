@@ -6,6 +6,7 @@ import Dropdown from '@/Components/Dropdown.vue'
 import DropdownLink from '@/Components/DropdownLink.vue'
 import { SidebarProvider, SidebarTrigger } from '@/Components/taskmanager/ui/sidebar'
 import TaskSidebar from '@/Components/taskmanager/TaskSidebar.vue'
+import logo from '../../images/logo.png'
 
 const sidebarOpen = ref(false)
 const filter = ref('all')
@@ -43,15 +44,17 @@ const setFilter = (newFilter: string) => {
             <!-- Main content -->
             <div class="flex flex-col flex-1 min-h-screen">
                 <!-- Navbar -->
-                <nav class="flex items-center justify-between px-6 py-4 shadow-md bg-gradient-header">
+                <nav class="flex items-center justify-between px-6 py-2 shadow-md bg-gradient-header">
                     <div class="flex items-center flex-1">
                         <Link :href="route('dashboard')" class="flex items-center gap-2">
-                        <ApplicationLogo class="w-10 h-10" />
+                        <div class="logo-custom">
+                            <img :src="logo" alt="Logo" class="logo-custom">
+                        </div>
                         </Link>
                     </div>
 
                     <div class="flex-1 text-center">
-                        <span class="text-xl font-bold text-white">SimpleTaskManager</span>
+                        <span class="text-xl font-bold text-white">Simple Task Manager</span>
                     </div>
 
                     <div class="flex items-center justify-end flex-1">
